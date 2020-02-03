@@ -29,5 +29,11 @@ module Nt
       res = Net::HTTP.get(URI("#{BASE_URI}/users"))
       puts JSON.parse(res)["data"]["contents"].to_json
     end
+
+    desc 'search', 'search notes'
+    def search(query)
+      res = Net::HTTP.get(URI("#{BASE_URI}/searches?q=#{query}"))
+      puts JSON.parse(res)["data"]["notes"].to_json
+    end
   end
 end
