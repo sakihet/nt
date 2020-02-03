@@ -1,6 +1,4 @@
 require "nt/version"
+require "nt/cli"
 
-module Nt
-  class Error < StandardError; end
-  # Your code goes here...
-end
+Nt::CLI.start(ARGV)
