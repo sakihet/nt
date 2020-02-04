@@ -24,6 +24,13 @@ module Nt
       puts JSON.parse(res)["data"]["contents"].to_json
     end
 
+    desc 'open', 'open a note'
+    def open(urlname, key)
+      url = "https://note.com/#{urlname}/n/#{key}"
+      puts "opend: #{url}"
+      system("open #{url}")
+    end
+
     desc 'users', 'show users'
     def users
       res = Net::HTTP.get(URI("#{BASE_URI}/users"))
