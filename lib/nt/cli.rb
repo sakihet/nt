@@ -48,6 +48,13 @@ module Nt
       system("open #{url}")
     end
 
+    desc 'home', 'open user home'
+    def home(urlname)
+      url = "https://note.com/#{urlname}"
+      puts "opend: #{url}"
+      system("open #{url}")
+    end
+
     desc 'users', 'show users'
     options :size => :numeric
     def users
