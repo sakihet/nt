@@ -38,8 +38,13 @@ module Nt
     end
 
     desc 'users', 'show users'
+    options :size => :numeric
     def users
-      res = Net::HTTP.get(URI("#{BASE_URI}/users"))
+      if options.empty?
+        res = Net::HTTP.get(URI("#{BASE_URI}/users"))
+      else
+        res = Net::HTTP.get(URI("#{BASE_URI}/users?size=#{options[:size]}"))
+      end
       puts JSON.parse(res)["data"]["contents"].to_json
     end
 
