@@ -31,8 +31,13 @@ module Nt
     end
 
     desc 'notes', 'show notes'
+    options :size => :numeric
     def notes
-      res = Net::HTTP.get(URI("#{BASE_URI}/notes"))
+      if options.empty?
+        res = Net::HTTP.get(URI("#{BASE_URI}/notes"))
+      else
+        res = Net::HTTP.get(URI("#{BASE_URI}/notes?size=#{options[:size]}"))
+      end
       puts JSON.parse(res)["data"]["contents"].to_json
     end
 
