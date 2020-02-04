@@ -13,17 +13,16 @@ rake install
 ## Usage
 
 ```
-nt categories
-
-nt contests
-
-nt hashtags
-
-nt notes
-
-nt open $urlname $key
-
-nt users
-
-nt search $query
+> nt --help
+Commands:
+  nt categories      # show categories
+  nt contests        # show contests
+  nt hashtags        # show hashtags
+  nt help [COMMAND]  # Describe available commands or one specific command
+  nt home            # open user home
+  nt notes           # show notes
+  nt open            # open a note
+  nt search          # search notes
+  nt users           # show users
+  nt version         # version
 ```
