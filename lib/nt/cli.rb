@@ -18,6 +18,12 @@ module Nt
       puts JSON.parse(res)["data"]["categories"].to_json
     end
 
+    desc 'contests', 'show contests'
+    def contests
+      res = Net::HTTP.get(URI("#{BASE_URI}/contests"))
+      puts JSON.parse(res)["data"]["contests"].to_json
+    end
+
     desc 'hashtags', 'show hashtags'
     def hashtags
       res = Net::HTTP.get(URI("#{BASE_URI}/hashtags"))
