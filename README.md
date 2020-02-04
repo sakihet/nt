@@ -15,6 +15,10 @@ rake install
 ```
 nt categories
 
+nt contests
+
+nt hashtags
+
 nt notes
 
 nt open $urlname $key
